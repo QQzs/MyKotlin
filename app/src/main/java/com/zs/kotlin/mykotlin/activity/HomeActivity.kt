@@ -9,6 +9,15 @@ import com.zs.kotlin.mykotlin.R
 import com.zs.kotlin.mykotlin.adapter.ActivityAdapter
 import com.zs.kotlin.mykotlin.listener.KotlinItemClickListener
 
+/**
+ *
+Created by zs
+Date：2017年 07月 05日
+Time：15:27
+—————————————————————————————————————
+About: 主页面
+—————————————————————————————————————
+ */
 class HomeActivity : AppCompatActivity() , KotlinItemClickListener {
 
     var mRecyclerView: RecyclerView? = null

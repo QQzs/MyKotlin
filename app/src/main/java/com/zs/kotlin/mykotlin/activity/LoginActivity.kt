@@ -9,6 +9,16 @@ import android.widget.EditText
 import android.widget.Toast
 import com.zs.kotlin.mykotlin.R
 
+
+/**
+ *
+Created by zs
+Date：2017年 07月 05日
+Time：15:27
+—————————————————————————————————————
+About: 登录页面demo
+—————————————————————————————————————
+ */
 class LoginActivity : AppCompatActivity() {
 
     private var mPhone: EditText? = null

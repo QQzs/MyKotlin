@@ -1,5 +1,19 @@
 package com.zs.kotlin.mykotlin.activity
 
+import android.util.Log
+import android.widget.ImageView
+import android.widget.TextView
+import com.zs.kotlin.mykotlin.bean.Book
+
+/**
+ *
+Created by zs
+Date：2017年 07月 05日
+Time：15:27
+—————————————————————————————————————
+About:语法
+—————————————————————————————————————
+ */
 class GrammarActivity : android.support.v7.app.AppCompatActivity() {
 
     private var mTv: android.widget.TextView? = null
@@ -11,21 +25,21 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() {
     private var a: Short? = 1
     private var b: Long? = null;
     // 数组  [1, 2, 3]
-    private var c =  arrayOf(1,2,3)
+    private var c = arrayOf(1,2,3)
     // 空的定长度的数组
     private var e = arrayOfNulls<Int>(5)
     // 创建 Array<String> 内容为 ["0", "1", "4", "9", "16"]
     private var f = Array(5,{i ->(i * i).toString()})
-
     private var g: Char? = null
-
+    private var h = ArrayList<Book>()
+    private var i = HashMap<Int,Book>()
 
     override fun onCreate(savedInstanceState: android.os.Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.zs.kotlin.mykotlin.R.layout.activity_main)
-        mTv = findViewById(com.zs.kotlin.mykotlin.R.id.tv_main) as android.widget.TextView
-        mTv2 = findViewById(com.zs.kotlin.mykotlin.R.id.tv_main2) as android.widget.TextView
-        mIv1 = findViewById(com.zs.kotlin.mykotlin.R.id.iv_main1) as android.widget.ImageView
+        mTv = findViewById(com.zs.kotlin.mykotlin.R.id.tv_main) as TextView
+        mTv2 = findViewById(com.zs.kotlin.mykotlin.R.id.tv_main2) as TextView
+        mIv1 = findViewById(com.zs.kotlin.mykotlin.R.id.iv_main1) as ImageView
 
         mTv?.text = "1234567890"
         mTv2?.text = "22222222"
@@ -78,14 +92,13 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() {
 
         var setEntry = l.entries
         setEntry.forEach {
-            android.util.Log.d("My_Log","key = ${it.key} , value = ${it.value}")
+            Log.d("My_Log","key = ${it.key} , value = ${it.value}")
         }
         for ((k,v) in l){
-            android.util.Log.d("My_Log","key = $k , value = $v")
+            Log.d("My_Log","key = $k , value = $v")
         }
 
-
-        android.util.Log.d("My_Log","result = " + getResult1())
+        Log.d("My_Log","result = " + getResult1())
         try {
             getResult2(1,2)
         } catch(e: Exception) {
@@ -108,6 +121,7 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() {
         android.util.Log.d("My_Log","result = " + (a + b))
 
     }
+
     fun getResult3(a: Int , b:Int): String{
         return "" + (a + b)
     }
@@ -123,7 +137,6 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() {
         if(g in '0' .. '9'){
             g!!.toInt()
         }
-
 
     }
 
@@ -166,8 +179,8 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() {
     }
 
     fun tranform(flag : String) : Int = when(flag){
-        "red" -> 1
-        "blue" -> 2
-        else -> 0
+        "red"   -> 1
+        "blue"  -> 2
+        else    -> 0
     }
 }
