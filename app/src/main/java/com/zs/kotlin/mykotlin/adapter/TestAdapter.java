@@ -48,6 +48,11 @@ public class TestAdapter extends RecyclerView.Adapter<TestAdapter.MyViewHolder>{
         return mData.size();
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
+
     class MyViewHolder extends RecyclerView.ViewHolder{
 
         private TextView tvName;

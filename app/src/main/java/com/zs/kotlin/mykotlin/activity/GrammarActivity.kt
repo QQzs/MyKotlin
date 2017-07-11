@@ -1,9 +1,13 @@
 package com.zs.kotlin.mykotlin.activity
 
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import com.zs.kotlin.mykotlin.R
 import com.zs.kotlin.mykotlin.bean.Book
+import org.jetbrains.anko.toast
 
 /**
  *
@@ -14,7 +18,7 @@ Time：15:27
 About:语法
 —————————————————————————————————————
  */
-class GrammarActivity : android.support.v7.app.AppCompatActivity() {
+class GrammarActivity : android.support.v7.app.AppCompatActivity() , View.OnClickListener {
 
     private var mTv: android.widget.TextView? = null
     private var mTv2: android.widget.TextView? = null
@@ -45,6 +49,26 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() {
         mTv2?.text = "22222222"
         mIv1?.setImageResource(com.zs.kotlin.mykotlin.R.mipmap.ic_launcher)
 
+
+        // 点击事件的四种写法
+
+//        mTv?.setOnClickListener(this)
+
+        mTv?.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(v: View?) {
+                Toast.makeText(v?.context,"  ***  mTv1 ***",Toast.LENGTH_SHORT).show()
+            }
+
+        })
+
+        mTv2?.setOnClickListener(View.OnClickListener {
+            Toast.makeText(GrammarActivity@this,"***  mTv2 ****",Toast.LENGTH_SHORT).show()
+        })
+
+        mIv1?.setOnClickListener{
+            Toast.makeText(GrammarActivity@this," **** image **** ",Toast.LENGTH_SHORT).show()
+        }
+
         /**
          * 把Short类型的 a 强转成 Int
          * Kotlin 短类型是不会隐式(自动)转换为长类型的，需要显示(手动)转换才行
@@ -57,10 +81,13 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() {
         var str = "$h.length is ${h.length}"  //识别为 "abc.length is 3"
 
         var i = listOf("1","2","3")
+
         var j = mutableListOf<Int>()
         j!!.add(-1)
         j!!.add(1)
         j.add(2)
+
+        j.swap(0,1)
 
         for (i in j.indices){
             j.get(i)
@@ -75,6 +102,8 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() {
         positives = j.filter { it > 1 }
 
         android.util.Log.d("My_Log","positives = ${positives.toString()}")
+
+        toast("hh")
 
         // 如果 positives 执行
         positives ?.let {
@@ -105,6 +134,15 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() {
 
         }
         android.util.Log.d("My_Log","result = " + getResult3(5,6))
+
+    }
+
+    override fun onClick(v: View?) {
+        when(v?.id){
+
+            R.id.tv_main -> Toast.makeText(GrammarActivity@this,"111111",Toast.LENGTH_SHORT).show()
+
+        }
 
     }
 
@@ -182,5 +220,14 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() {
         "red"   -> 1
         "blue"  -> 2
         else    -> 0
+    }
+
+    /**
+     * 扩展函数
+     */
+    fun <T> MutableList<T>.swap(index1: Int,index2: Int){
+        val temp = this[index1]
+        this[index1] = this[index2]
+        this[index2] = temp
     }
 }

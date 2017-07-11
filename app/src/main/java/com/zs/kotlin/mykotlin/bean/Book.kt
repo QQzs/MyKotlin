@@ -9,4 +9,4 @@ Time：15:27
 About:
 —————————————————————————————————————
  */
-data class Book(var name: String = "s" , var age: Int = 1)
+data class Book(var name: String = "s" , var content: String = "" , var type: Int = 0)

@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.TextUtils
 import android.view.View
-import android.widget.EditText
 import android.widget.Toast
 import com.zs.kotlin.mykotlin.R
-
+import kotlinx.android.synthetic.main.activity_kotlin.*
+import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.toast
+import org.jetbrains.anko.uiThread
 
 /**
  *
@@ -21,21 +23,29 @@ About: 登录页面demo
  */
 class LoginActivity : AppCompatActivity() {
 
-    private var mPhone: EditText? = null
-    private var mPassword: EditText? = null
+//    private var mPhone: EditText? = null
+//    private var mPassword: EditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin)
-        mPhone = findViewById(R.id.et_phone) as EditText
-        mPassword = findViewById(R.id.et_password) as EditText
+
+//        et_phone = findViewById(R.id.et_phone) as EditText
+//        et_password = findViewById(R.id.et_password) as EditText
 
     }
 
     fun btnLogin(view: View){
 
-        var phone: String = mPhone?.text.toString().trim()
-        var password: String = mPassword?.text.toString().trim()
+        doAsync{
+            var result = ""
+            uiThread {
+                toast(result)
+            }
+        }
+
+        var phone: String = et_phone?.text.toString().trim()
+        var password: String = et_password?.text.toString().trim()
 
         if (TextUtils.isEmpty(phone)){
 
@@ -52,4 +62,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
+
+
 }
