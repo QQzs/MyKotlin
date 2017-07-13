@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:background="#eee"
+            android:gravity="center_vertical"
+            >
+            <ImageView
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="@color/colorAccent"
+                android:layout_marginLeft="8dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="我的评价"
+                android:textSize="17dp"
+                android:textColor="@color/font_black"
+                android:layout_marginLeft="10dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_eva_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="评分：3.2"
+                android:textSize="16dp"
+                android:textColor="@color/hk_plan"
+                />
+
+            <com.zs.kotlin.mykotlin.view.StarBarView
+                android:id="@+id/star_eva_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:starEmpty="@drawable/star_nor"
+                app:starFill="@drawable/star_sel"
+                app:starDistance="5dp"
+                app:starCount="5"
+                app:starSize="20dp"
+                app:isTouch="true"
+                android:layout_marginLeft="10dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

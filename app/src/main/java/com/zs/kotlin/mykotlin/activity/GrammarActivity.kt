@@ -135,6 +135,22 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() , View.OnClic
         }
         android.util.Log.d("My_Log","result = " + getResult3(5,6))
 
+        var map = mapOf(1 to 1,2 to 2, 3 to 3)
+        for ((key,value) in map){
+            println("value ${value}")
+        }
+
+        for ((_,value) in map){
+            println("value ${value}")
+        }
+
+        // Lambda表达式
+        var sun:(Int,Int) -> Int = {x,y -> x + y}
+        // 匿名函数
+        fun (x: Int,y: Int): Int = x + y
+
+        fun compare(a: String, b: String): Boolean = a.length < b.length
+        fun compare(a: Int,b: Int) : Boolean = a > b
     }
 
     override fun onClick(v: View?) {
@@ -229,5 +245,26 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() , View.OnClic
         val temp = this[index1]
         this[index1] = this[index2]
         this[index2] = temp
+    }
+
+
+    /**
+     * 可变参数
+     *
+     * 类似：getParams(String... params)
+     */
+    fun <T> getParams(vararg ts: T) : List<T>{
+        var result = ArrayList<T>()
+        for (t in ts){
+          result.add(t)
+        }
+        return result
+    }
+
+    fun getMyParams(){
+        var a = arrayOf(1,2,3)
+
+        var list = getParams(0,3,*a,4) // 表示(0, 3, 1, 2, 3, 4)
+
     }
 }

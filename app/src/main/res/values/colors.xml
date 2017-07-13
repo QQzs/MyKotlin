@@ -5,4 +5,14 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="background">#00aa00</color>
+
+    <color name="hk_plan">#ffab58</color>
+
+    <color name="font_black">#333333</color>
+    // 字体 黑色
+    <color name="font_gray">#666666</color>
+    // 字体 灰色
+    <color name="font_light">#777777</color>
+    // 字体
+    <color name="font_lightgray">#999999</color>
 </resources>

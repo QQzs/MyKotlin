@@ -31,6 +31,7 @@ class HomeActivity : AppCompatActivity() , KotlinItemClickListener {
         mActivityList.add(GrammarActivity::class.java)
         mActivityList.add(LoginActivity::class.java)
         mActivityList.add(RecyclerViewActivity::class.java)
+        mActivityList.add(EvaluateActivity::class.java)
 
         mRecyclerView?.layoutManager = LinearLayoutManager(this)
         mRecyclerView?.adapter = ActivityAdapter(mActivityList,this)

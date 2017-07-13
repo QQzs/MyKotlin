@@ -60,7 +60,7 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         var book = mData!!.get(position)
         if(position == 0){
             holder!!.layoutTitle.visibility = View.VISIBLE
-            holder!!.tvType.text = "类型： " + book.type.toString()
+            holder!!.tvType.text = "类型：" + book.type.toString()
         }else{
             if (mData!!.get(position - 1).type == book.type){
                 holder!!.layoutTitle.visibility = View.GONE
