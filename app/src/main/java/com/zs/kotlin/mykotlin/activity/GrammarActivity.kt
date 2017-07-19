@@ -54,12 +54,14 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() , View.OnClic
 
 //        mTv?.setOnClickListener(this)
 
-        mTv?.setOnClickListener(object : View.OnClickListener{
-            override fun onClick(v: View?) {
-                Toast.makeText(v?.context,"  ***  mTv1 ***",Toast.LENGTH_SHORT).show()
-            }
+//        mTv?.setOnClickListener(object : View.OnClickListener{
+//            override fun onClick(v: View?) {
+//                Toast.makeText(v?.context,"  ***  mTv1 ***",Toast.LENGTH_SHORT).show()
+//            }
+//
+//        })
 
-        })
+        mTv?.setOnClickListener { v -> Toast.makeText(v?.context,"  ***  mTv1 ***",Toast.LENGTH_SHORT).show() }
 
         mTv2?.setOnClickListener(View.OnClickListener {
             Toast.makeText(GrammarActivity@this,"***  mTv2 ****",Toast.LENGTH_SHORT).show()

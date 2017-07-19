@@ -3,7 +3,9 @@ package com.zs.kotlin.mykotlin.activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.text.Editable
 import android.text.TextUtils
+import android.text.TextWatcher
 import android.view.View
 import android.widget.Toast
 import com.zs.kotlin.mykotlin.R
@@ -60,6 +62,22 @@ class LoginActivity : AppCompatActivity() {
             intent.setClass(LoginActivity@this, GrammarActivity::class.java)
             startActivity(intent)
         }
+
+        et_phone.addTextChangedListener(object:TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+        })
+
 
     }
 

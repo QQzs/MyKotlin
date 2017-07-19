@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView
 import com.zs.kotlin.mykotlin.R
 import com.zs.kotlin.mykotlin.adapter.ActivityAdapter
 import com.zs.kotlin.mykotlin.listener.KotlinItemClickListener
+import kotlinx.android.synthetic.main.activity_home.*
 
 /**
  *
@@ -20,12 +21,12 @@ About: 主页面
  */
 class HomeActivity : AppCompatActivity() , KotlinItemClickListener {
 
-    var mRecyclerView: RecyclerView? = null
-    
+//    var mRecyclerView: RecyclerView? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        mRecyclerView = findViewById(R.id.recycler_view_home) as RecyclerView
+//        mRecyclerView = findViewById(R.id.recycler_view_home) as RecyclerView
 
         var mActivityList = ArrayList<Class<*>>()
         mActivityList.add(GrammarActivity::class.java)
@@ -33,8 +34,8 @@ class HomeActivity : AppCompatActivity() , KotlinItemClickListener {
         mActivityList.add(RecyclerViewActivity::class.java)
         mActivityList.add(EvaluateActivity::class.java)
 
-        mRecyclerView?.layoutManager = LinearLayoutManager(this)
-        mRecyclerView?.adapter = ActivityAdapter(mActivityList,this)
+        recycler_view_home?.layoutManager = LinearLayoutManager(this)
+        recycler_view_home?.adapter = ActivityAdapter(mActivityList,this)
 
     }
 
