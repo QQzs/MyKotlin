@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import com.zs.kotlin.mykotlin.R
 import com.zs.kotlin.mykotlin.adapter.ActivityAdapter
+import com.zs.kotlin.mykotlin.bean.Live39Info
 import com.zs.kotlin.mykotlin.listener.KotlinItemClickListener
 import kotlinx.android.synthetic.main.activity_home.*
 
@@ -36,6 +38,13 @@ class HomeActivity : AppCompatActivity() , KotlinItemClickListener {
 
         recycler_view_home?.layoutManager = LinearLayoutManager(this)
         recycler_view_home?.adapter = ActivityAdapter(mActivityList,this)
+
+        var bean = Live39Info()
+        var data = (bean.rolelist) as ArrayList<Live39Info.RoleList>
+        data.add(Live39Info.RoleList("ds","12222"))
+        Log.d("My_Log",data.toString())
+
+        Log.d("My_Time","time = " + System.currentTimeMillis())
 
     }
 

@@ -241,6 +241,19 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() , View.OnClic
     }
 
     /**
+     * 判断多个条件整合
+     */
+    fun check(value: Any?): String = when (value) {
+        is Int, is Float, is Double -> {
+            if (value == 0) "value为0"
+            else "value = $value"
+        }
+        else -> {
+            "value为空"
+        }
+    }
+
+    /**
      * 扩展函数
      */
     fun <T> MutableList<T>.swap(index1: Int,index2: Int){
