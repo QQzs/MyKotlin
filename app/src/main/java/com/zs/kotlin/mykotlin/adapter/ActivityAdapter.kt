@@ -4,9 +4,9 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import com.zs.kotlin.mykotlin.R
 import com.zs.kotlin.mykotlin.listener.KotlinItemClickListener
+import kotlinx.android.synthetic.main.item_layout.view.*
 
 /**
  *
@@ -29,24 +29,40 @@ class ActivityAdapter(private val mData: ArrayList<Class<*>> , var mItemListener
     }
 
     override fun onBindViewHolder(holder: ActivityViewHolder?, position: Int) {
-        var item = mData.get(position)
-        holder!!.mTvName.text = item.simpleName
-        holder!!.mTv.visibility = View.GONE
 
-        holder.itemView.setOnClickListener {
-            mItemListener.onItemClick(holder,item)
-//            holder.itemView.context.startActivity(Intent(holder.itemView.context,item))
-        }
+        holder?.bind(position)
+
+//        var item = mData.get(position)
+//        holder!!.mTvName.text = item.simpleName
+//        holder!!.mTv.visibility = View.GONE
+
+//        holder.itemView.setOnClickListener {
+//            mItemListener.onItemClick(holder,item)
+////            holder.itemView.context.startActivity(Intent(holder.itemView.context,item))
+//        }
     }
 
-
     inner class ActivityViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
-        var mTvName: TextView
-        var mTv: TextView
-        init {
-            mTvName = itemView?.findViewById(R.id.tv_item_name) as TextView
-            mTv = itemView?.findViewById(R.id.tv_item_age) as TextView
+
+        // 绑定数据 方案一
+//        var mTvName: TextView
+//        var mTv: TextView
+//        init {
+//            mTvName = itemView?.findViewById(R.id.tv_item_name) as TextView
+//            mTv = itemView?.findViewById(R.id.tv_item_age) as TextView
+//        }
+
+        // 绑定数据 方案二
+        fun bind(position: Int){
+            var item = mData.get(position)
+            itemView.tv_item_name.text = item.simpleName
+            itemView.tv_item_age.visibility = View.GONE
+            itemView.setOnClickListener{
+                mItemListener.onItemClick(this,item)
+            }
+
         }
+
     }
 
 }

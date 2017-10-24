@@ -11,6 +11,10 @@ import com.zs.kotlin.mykotlin.bean.Book
 import com.zs.kotlin.mykotlin.view.StarBarView
 import kotlinx.android.synthetic.main.activity_evaluate.*
 
+/**
+ * 评价星星
+ */
+
 class EvaluateActivity : AppCompatActivity(){
 
     private var mTvEvaluate: TextView ? = null
