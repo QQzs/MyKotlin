@@ -1,6 +1,5 @@
 package com.zs.kotlin.mykotlin.activity
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
@@ -11,6 +10,7 @@ import android.widget.Toast
 import com.zs.kotlin.mykotlin.R
 import kotlinx.android.synthetic.main.activity_kotlin.*
 import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.uiThread
 
@@ -58,9 +58,14 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this,"密码不能为空", Toast.LENGTH_SHORT).show()
 
         } else{
-            var intent = Intent()
-            intent.setClass(LoginActivity@this, GrammarActivity::class.java)
-            startActivity(intent)
+            // 页面跳转两种方法
+
+            // 方法一
+//            var intent = Intent()
+//            intent.setClass(LoginActivity@this, GrammarActivity::class.java)
+//            startActivity(intent)
+            // 方法二
+            startActivity<GrammarActivity>("data1" to "name", "data2" to "age")
         }
 
         et_phone.addTextChangedListener(object:TextWatcher{

@@ -44,7 +44,6 @@ class HomeActivity : AppCompatActivity() , KotlinItemClickListener {
         data.add(Live39Info.RoleList("ds","12222"))
         Log.d("My_Log",data.toString())
 
-        Log.d("My_Time","time = " + System.currentTimeMillis())
 
     }
 
