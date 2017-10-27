@@ -7,6 +7,8 @@ import android.widget.TextView
 import android.widget.Toast
 import com.zs.kotlin.mykotlin.R
 import com.zs.kotlin.mykotlin.bean.Book
+import org.jetbrains.anko.dip
+import org.jetbrains.anko.sp
 import org.jetbrains.anko.toast
 
 /**
@@ -70,6 +72,11 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() , View.OnClic
         mIv1?.setOnClickListener{
             Toast.makeText(GrammarActivity@this," **** image **** ",Toast.LENGTH_SHORT).show()
         }
+
+        // 单位转换
+        var dpAsPx = dip(10)
+        var spAsPx = sp(10f)
+        Log.d("My_Log_turn","dpAsPx ==  " + dpAsPx + "\nspAsPx == " + spAsPx)
 
         /**
          * 把Short类型的 a 强转成 Int
