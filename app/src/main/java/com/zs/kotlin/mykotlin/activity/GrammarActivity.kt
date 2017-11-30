@@ -209,7 +209,7 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() , View.OnClic
     fun getResult4(data: Array<String>){
 
         if (data.size == 0) return
-        for(d in data){
+            for(d in data){
             android.util.Log.d("My_Log","data = : ${d}")
         }
 

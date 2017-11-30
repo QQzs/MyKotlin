@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.zs.kotlin.mykotlin.R
@@ -25,15 +26,23 @@ About: 登录页面demo
  */
 class LoginActivity : AppCompatActivity() {
 
-//    private var mPhone: EditText? = null
-//    private var mPassword: EditText? = null
+    var data1: String ? = null
+    var data2: String ? = ""
+    var data3: String = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin)
 
-//        et_phone = findViewById(R.id.et_phone) as EditText
-//        et_password = findViewById(R.id.et_password) as EditText
+        data1 = intent.getStringExtra("a")
+        data2 = intent.getStringExtra("a")
+//        data3 = intent.getStringExtra("a")
+
+        Log.d("My_Log","data1 = " + data1)
+        Log.d("My_Log","data2 = " + data2)
+        Log.d("My_Log","data3 = " + data3)
+
 
     }
 
