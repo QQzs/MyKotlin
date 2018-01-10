@@ -94,7 +94,7 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         val layoutTitle: View
 
         init {
-            tvType = itemView.findViewById(R.id.tv_item_type) as TextView
+            tvType = itemView.findViewById(R.id.tv_item_type)
             layoutTitle = itemView.findViewById(R.id.rl_item)
         }
 
@@ -106,8 +106,8 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         val tvAge: TextView
 
         init {
-            tvName = itemView.findViewById(R.id.tv_item_name) as TextView
-            tvAge = itemView.findViewById(R.id.tv_item_age) as TextView
+            tvName = itemView.findViewById(R.id.tv_item_name)
+            tvAge = itemView.findViewById(R.id.tv_item_age)
         }
 
     }
@@ -118,8 +118,8 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         val ivImage: ImageView
 
         init {
-            tvName = itemView.findViewById(R.id.tv_item_name) as TextView
-            ivImage = itemView.findViewById(R.id.iv_item) as ImageView
+            tvName = itemView.findViewById(R.id.tv_item_name)
+            ivImage = itemView.findViewById(R.id.iv_item)
         }
 
     }
@@ -130,8 +130,8 @@ class MyAdapter : RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         val tvAge: TextView
 
         init {
-            tvName = itemView.findViewById(R.id.tv_item_name) as TextView
-            tvAge = itemView.findViewById(R.id.tv_item_age) as TextView
+            tvName = itemView.findViewById(R.id.tv_item_name)
+            tvAge = itemView.findViewById(R.id.tv_item_age)
         }
 
     }

@@ -78,7 +78,7 @@ class RecyclerViewActivity : AppCompatActivity(){
 
                 //找到列表下一个可见的View
                 var view = linearLayoutManager.findViewByPosition(mCurrentPosition + 1) ?: return
-                if (view.top <= mTitleHeight && view.findViewById(R.id.rl_item).visibility == View.VISIBLE){
+                if (view.top <= mTitleHeight && view.findViewById<RelativeLayout>(R.id.rl_item).visibility == View.VISIBLE){
                     //被顶掉的效果
                     mLayoutTitle?.y = (-(mTitleHeight -view.top)).toFloat()
                 }else{
