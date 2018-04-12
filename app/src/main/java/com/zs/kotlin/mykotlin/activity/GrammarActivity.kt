@@ -2,8 +2,6 @@ package com.zs.kotlin.mykotlin.activity
 
 import android.util.Log
 import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import com.zs.kotlin.mykotlin.R
 import com.zs.kotlin.mykotlin.bean.Book
@@ -43,9 +41,9 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() , View.OnClic
     override fun onCreate(savedInstanceState: android.os.Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.zs.kotlin.mykotlin.R.layout.activity_main)
-        mTv = findViewById(com.zs.kotlin.mykotlin.R.id.tv_main) as TextView
-        mTv2 = findViewById(com.zs.kotlin.mykotlin.R.id.tv_main2) as TextView
-        mIv1 = findViewById(com.zs.kotlin.mykotlin.R.id.iv_main1) as ImageView
+        mTv = findViewById(R.id.tv_main)
+        mTv2 = findViewById(R.id.tv_main2)
+        mIv1 = findViewById(R.id.iv_main1)
 
         mTv?.text = "1234567890"
         mTv2?.text = "22222222"
