@@ -160,6 +160,19 @@ class GrammarActivity : android.support.v7.app.AppCompatActivity() , View.OnClic
 
         fun compare(a: String, b: String): Boolean = a.length < b.length
         fun compare(a: Int,b: Int) : Boolean = a > b
+
+        // 左右闭区间，合法值包括11，也包括66
+        for (i in 11 .. 66) {
+        }
+        // 左闭右开区间，合法值包括11，但不包括66
+        for (i in 11 until 66) {
+        }
+        // 每次默认递增1，这里改为每次递增4
+        for (i in 23..89 step 4) {
+        }
+        // for循环默认递增，这里使用downTo表示递减
+        for (i in 50 downTo 7) {
+        }
     }
 
     override fun onClick(v: View?) {
