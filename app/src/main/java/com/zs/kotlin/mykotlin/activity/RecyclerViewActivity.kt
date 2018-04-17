@@ -24,47 +24,32 @@ About:RecyclerView
 class RecyclerViewActivity : AppCompatActivity(){
 
     var mRecyclerView: RecyclerView? = null
-    var mData: ArrayList<Book>? = null
+    var mData = arrayListOf<Book>()
     var mTitleHeight = 0
     var mCurrentPosition = 0
     var mLayoutTitle: RelativeLayout? = null
     var mTvTitle: TextView? = null
+    var mTvFloat: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
-        mRecyclerView = findViewById(R.id.recycler_view) as RecyclerView
-        mData = ArrayList<Book>()
-        var book = Book(0)
-        mData!!.add(book)
-        book = Book(0)
-        mData!!.add(book)
-        book = Book(1)
-        mData!!.add(book)
-        book = Book(1)
-        mData!!.add(book)
-        book = Book(0)
-        mData!!.add(book)
-        book = Book(0)
-        mData!!.add(book)
-        book = Book(0)
-        mData!!.add(book)
-        book = Book(2)
-        mData!!.add(book)
-        book = Book(2)
-        mData!!.add(book)
-        book = Book(2)
-        mData!!.add(book)
-        book = Book(1)
-        mData!!.add(book)
+        mRecyclerView = findViewById(R.id.recycler_view)
+
+        for ( i in 1..20){
+            mData.add(Book(i%3))
+        }
         val linearLayoutManager = LinearLayoutManager(this)
         mRecyclerView?.layoutManager = linearLayoutManager
-        mRecyclerView?.adapter = MyAdapter(mData as ArrayList<Book>)
+        mRecyclerView?.adapter = MyAdapter(mData)
 
-        mLayoutTitle = findViewById(R.id.rl_item) as RelativeLayout
+        mLayoutTitle = findViewById(R.id.rl_item)
         mLayoutTitle?.visibility = View.VISIBLE
-        mTvTitle = findViewById(R.id.tv_item_type) as TextView
-        mTvTitle?.text = "类型：" + mData!!.get(mCurrentPosition).type
+        mTvTitle = findViewById(R.id.tv_item_type)
+        mTvTitle?.text = "类型：" + mData[mCurrentPosition].type
+
+        mTvFloat = findViewById(R.id.tv_float_view)
+        mTvFloat?.text = "0"
 
         mRecyclerView?.addOnScrollListener(object: RecyclerView.OnScrollListener(){
 
@@ -89,6 +74,9 @@ class RecyclerViewActivity : AppCompatActivity(){
                     mCurrentPosition = linearLayoutManager.findFirstVisibleItemPosition()
                     mLayoutTitle?.y = 0f
                     mTvTitle?.text = "类型：" + mData!!.get(mCurrentPosition).type
+
+
+                    mTvFloat?.text = mCurrentPosition.toString()
 
                 }
             }

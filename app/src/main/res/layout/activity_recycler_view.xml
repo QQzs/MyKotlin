@@ -20,6 +20,19 @@
 
         <include layout="@layout/item_title_layout"/>
 
+        <TextView
+            android:id="@+id/tv_float_view"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text=""
+            android:textSize="16dp"
+            android:textColor="#fff"
+            android:layout_gravity="right|bottom"
+            android:layout_margin="50dp"/>
+
+
     </FrameLayout>
 
 </RelativeLayout>
